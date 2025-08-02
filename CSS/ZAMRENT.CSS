@@ -1,5 +1,5 @@
 body{
-    background-image: url(../IMAGES/sddefault.jpg);
+    background-image: url(../images/sddefault.jpg);
     color: white;
     display: block;
     background-repeat: no-repeat;
@@ -371,4 +371,5 @@ footer{
     padding: 10px;
     margin-top: 2px;
     border-top: 2px solid white;
+
 }
