@@ -62,7 +62,7 @@ h2::before{
    100% { color: red;}
 }**/
 .head{
-      background-image: url(../IMAGES/aerial-drone-image-luxury-florida-260nw-1199655202.jpg);
+      background-image: url(../images/aerial-drone-image-luxury-florida-260nw-1199655202.jpg);
    /** filter: blur(0.1px) brightness(60%);**/
     border: solid white;
     margin-top: -110px;
@@ -373,3 +373,4 @@ footer{
     border-top: 2px solid white;
 
 }
+
