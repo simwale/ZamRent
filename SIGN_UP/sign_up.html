@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="sign.css">
+  <link rel="stylesheet" href="../CSS/ZAMRENT.CSS">
+  
+</head>
+<body>
+  
+
+
+<div class="header">
+  <h2><icon class="change-color"><img src="../images/goldlogo.png" alt=""></icon>ZAMRENT</h2>
+
+   <div class="nav-bar">
+        <nav><b><a href="../ZAMRENT.html">HOME</a>
+            <a href="#">HOUSES</a>
+            <a href="../about us/about.html">ABOUT</a>
+            <a href="#">CONTACT</a>
+            <a href="../SIGN_UP/login.html">LOGIN</a>
+</b>
+             
+        </nav>
+</div>
+
+
+ <div>
+        <nav>
+     <div class="sidebar" id="sidebar">
+        <li class="close-btn" id="close-btn" ><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="red"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></li>
+        <h3 class="h2">ZAMRENT MENU</h3>
+        <li><a href="ZAMRENT.html">HOME</a></li>
+       <li> <a href="#">HOUSES</a></li>
+        <li><a href="about us/about.html">ABOUT</a></li>
+        <li><a href="#">CONTACT</a></li>
+       <li> <a href="SIGN_UP/login.html">LOGIN</a></li>
+        
+    </div>
+</nav>
+    </div>
+
+
+
+
+  <li  id="menu-toggle" ><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+</svg>
+</li>
+  
+  <div class="form-container" style="font-size: larger; width: 600px;">
+    <h2 class="sign">Sign Up</h2>
+    <form>
+      <input type="text" placeholder="Username" required>
+      <input type="email" placeholder="Email" required>
+      <input type="password" placeholder="Password" required>
+      <label >Select Role:</label>
+      <select required style="font-size: 20px;">
+        <option value="">--Choose Role--</option>
+        <option value="landlord">Landlord/Agent</option>
+        <option value="client">Client</option>
+      </select>
+
+      <label><input type="checkbox" required style="width: 25px; height: 25px;" > I agree to the terms</label>
+      <button type="submit" style="font-size: 20px;">Register</button>
+    </form>
+    <p>Already have an account? <a href="login.html">Login</a></p>
+  </div>
+   
+
+       <script>
+            const toggleBtn = document.getElementById("menu-toggle");
+    const sidebar = document.getElementById("sidebar");
+
+    toggleBtn.addEventListener("click", () => {
+      sidebar.classList.toggle("active");
+    });
+
+
+   
+  const closeBtn = document.getElementById("close-btn");
+
+  toggleBtn.addEventListener("click", () => {
+    sidebar.classList.add("active");
+  });
+
+  closeBtn.addEventListener("click", () => {
+    sidebar.classList.remove("active");
+  });
+
+
+
+        </script>
+</body>
+</html>
