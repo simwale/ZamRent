@@ -1,5 +1,5 @@
 body{
-    background-image: url(../images/sddefault.jpg);
+    background-image: url(../IMAGES/sddefault.jpg);
     color: white;
     display: block;
     background-repeat: no-repeat;
@@ -9,7 +9,7 @@ body{
     padding: 0;
     background-position: center;
     height: 100vh;
-   
+   background-attachment: fixed;
 
 }
 h2{
@@ -30,6 +30,28 @@ h2{
         0 0 40px rgba(rgb(36, 34, 34), rgb(22, 26, 22), rgb(31, 31, 34), 0.4)
         0 0 60px rgba(rgb(41, 37, 37), rgb(19, 20, 19), rgb(9, 9, 10), 0.4);
 }
+
+.h2{
+    margin-top: 30px;
+    padding: 0px;
+    border-radius: 10px;
+    font-size: 30px;
+    text-align: center;
+    position: relative;
+     background: linear-gradient(90deg, red, orange, yellow, green, rgb(94, 20, 148), violet, gold, brown);
+   background-size: 300%;
+   background-clip: text;
+   -webkit-background-clip: text;
+   color: transparent;
+   -webkit-text-fill-color: transparent;
+   animation: moveGradient 10s linear infinite; 
+   text-shadow: 0 0 20px rgba(rgb(51, 46, 46), rgb(40, 44, 40), rgb(72, 72, 78), 0.4)
+        0 0 40px rgba(rgb(36, 34, 34), rgb(22, 26, 22), rgb(31, 31, 34), 0.4)
+        0 0 60px rgba(rgb(41, 37, 37), rgb(19, 20, 19), rgb(9, 9, 10), 0.4);
+}
+
+
+
 img{
     height: 70px;
     width: 90px;
@@ -62,7 +84,7 @@ h2::before{
    100% { color: red;}
 }**/
 .head{
-      background-image: url(../images/aerial-drone-image-luxury-florida-260nw-1199655202.jpg);
+      background-image: url(../IMAGES/aerial-drone-image-luxury-florida-260nw-1199655202.jpg);
    /** filter: blur(0.1px) brightness(60%);**/
     border: solid white;
     margin-top: -110px;
@@ -151,6 +173,7 @@ h2::before{
     margin-left: 150px;
     margin-bottom: -90px;
     box-shadow: 4px 10px 10px 10px rgba(0, 0, 0, 0.4);
+    
 }
 }
 @media (max-width: 600px) {
@@ -161,6 +184,7 @@ h2::before{
     align-items: baseline;
     color: blue;
     box-shadow: 4px 10px 10px 10px rgba(0, 0, 0, 0.4);
+    background-color: rgba(255, 255, 255, 0.616);
 }
 }
 
@@ -249,9 +273,10 @@ svg:hover {
       z-index: 2;
       border-radius: 5px;
     }
-    li #close-btn{
+    .close-btn svg{
         left: 0;
         top: 0;
+       border: 1px solid white;
     }
 .sidebar {
       position: fixed;
@@ -278,7 +303,7 @@ svg:hover {
     .sidebar a {
       display: block;
       padding: 10px;
-      color: white;
+      color: gold;
       text-decoration: none;
     }
 
@@ -334,7 +359,7 @@ nav .sidebar  a {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
     right: 20px;
-    position: ;
+
 }
 #Sign-btn{
      width: 100%;
@@ -364,6 +389,19 @@ h3{
     width: 250px;
 }
 
+
+.about-us{
+    color: blue;
+    background-color: rgb(182, 177, 177);
+    padding: 20px;
+    border: 2px solid black;
+
+}
+.h3{
+    align-items: center;
+    margin-left: 50px;
+}
+
 footer{
     background-color: grey;
     height: 50px;
@@ -371,6 +409,4 @@ footer{
     padding: 10px;
     margin-top: 2px;
     border-top: 2px solid white;
-
 }
-
