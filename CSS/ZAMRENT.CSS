@@ -1,5 +1,5 @@
 body{
-    background-image: url(../IMAGES/sddefault.jpg);
+    background-image: url(../images/sddefault.jpg);
     color: white;
     display: block;
     background-repeat: no-repeat;
@@ -84,7 +84,7 @@ h2::before{
    100% { color: red;}
 }**/
 .head{
-      background-image: url(../IMAGES/aerial-drone-image-luxury-florida-260nw-1199655202.jpg);
+      background-image: url(../images/aerial-drone-image-luxury-florida-260nw-1199655202.jpg);
    /** filter: blur(0.1px) brightness(60%);**/
     border: solid white;
     margin-top: -110px;
@@ -133,7 +133,7 @@ h2::before{
    
      height: 500px;
     width: 100%;
-    /**background-image: url(../IMAGES/proudfam.jpg);**/
+    /**background-image: url(../images/proudfam.jpg);**/
     background-size: cover;
     display: flex;
     animation: slide 12s infinite;
@@ -410,3 +410,4 @@ footer{
     margin-top: 2px;
     border-top: 2px solid white;
 }
+
