@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZAMRENT - Sign Up</title>
+  <link rel="stylesheet" href="new.css">
+
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="logo">
+    <img src="../images/goldlogo.png" alt="logo">
+    <h2>ZAMRENT</h2>
+  </div>
+
+  <nav class="nav">
+    <strong>
+       <a href="../ZAMRENT.html">HOME</a>
+    <a href="../HOUSES/house.html">HOUSES</a>
+    <a href="../about us/about.html">ABOUT</a>
+    <a href="../CONTACTS/contact.html">CONTACT</a>
+    <a href="login.html">LOGIN</a>
+    </strong>
+   
+  </nav>
+
+  <div class="menu-toggle" id="menu-toggle">☰</div>
+</header>
+
+<!-- SIDEBAR -->
+<div class="sidebar" id="sidebar">
+  <div class="close-btn" id="close-btn">✖</div>
+  <a href="#">HOME</a>
+  <a href="#">HOUSES</a>
+  <a href="#">ABOUT</a>
+  <a href="#">CONTACT</a>
+  <a href="login.html">LOGIN</a>
+</div>
+
+<!-- SIGNUP FORM -->
+<div class="form-container">
+  <h2 class="sign">Create Account</h2>
+
+ <!-- <form>
+    <input type="text" placeholder="Username" required>
+    <input type="email" placeholder="Email" required>
+    <input type="password" placeholder="Password" required>
+
+    <label>Select Role:</label>
+    <select required>
+      <option value="">--Choose Role--</option>
+      <option value="landlord">Landlord</option>
+      <option value="agent">Agent</option>
+      <option value="client">Client</option>
+    </select>
+
+    <label class="checkbox">
+      <input type="checkbox" required>
+      I agree to the terms
+    </label>
+
+    <button type="submit">Register</button>
+  </form>
+-->
+
+<form onsubmit="signUp(event)">
+  <input type="text" id="username" placeholder="Username" required>
+  <input type="email" id="email" placeholder="Email" required>
+  <input type="password" id="password" placeholder="Password" required>
+
+  <label>Select Role:</label>
+  <select id="role" required>
+    <option value="">--Choose Role--</option>
+    <option value="landlord">Landlord</option>
+    <option value="agent">Agent</option>
+    <option value="client">Client</option>
+  </select>
+
+  <label class="checkbox">
+    <input type="checkbox" required>
+    I agree to the terms
+  </label>
+
+  <button type="submit">Register</button>
+</form>
+
+  <p>Already have an account? <a href="login.html">Login</a></p>
+</div>
+
+<!-- SCRIPT -->
+<script>
+const toggleBtn = document.getElementById("menu-toggle");
+const sidebar = document.getElementById("sidebar");
+const closeBtn = document.getElementById("close-btn");
+
+toggleBtn.addEventListener("click", () => {
+  sidebar.classList.add("active");
+});
+
+closeBtn.addEventListener("click", () => {
+  sidebar.classList.remove("active");
+});
+</script>
+<!--FIREBASE-->
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+import { getFirestore, setDoc, doc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+const firebaseConfig = {
+   apiKey: "AIzaSyB_GeKHvHWF4OnCjl4n1RlIAJfIqH69rHo",
+  authDomain: "zamrent-4b4de.firebaseapp.com",
+  projectId: "zamrent-4b4de",
+  storageBucket: "zamrent-4b4de.firebasestorage.app",
+  messagingSenderId: "1027188717383",
+  appId: "1:1027188717383:web:0c247922d40ca7a35dbe62"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+
+// SIGNUP FUNCTION
+window.signUp = async function (e) {
+  e.preventDefault();
+
+  const username = document.getElementById("username").value;
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+  const role = document.getElementById("role").value;
+
+  try {
+    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+    const user = userCredential.user;
+
+    // Save extra user data in Firestore
+    await setDoc(doc(db, "users", user.uid), {
+      username: username,
+      email: email,
+      role: role
+    });
+
+    alert("Account created successfully!");
+
+    // Redirect to login
+    window.location.href = "login.html";
+
+  } catch (error) {
+    alert(error.message);
+  }
+};
+</script>
+
+</body>
+</html>
