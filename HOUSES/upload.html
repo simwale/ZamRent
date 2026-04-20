@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Upload Property</title>
+
+<style>
+body{
+    font-family:Poppins;
+    background-image: url("../IMAGES/sddefault.jpg");
+    padding:20px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.container{
+    max-width:500px;
+    margin:auto;
+    background:rgba(255, 255, 255, 0.85);
+    padding:25px;
+    border-radius:10px;
+}
+
+h2{
+    text-align:center;
+}
+
+input, select, textarea{
+    width:100%;
+    padding:10px;
+    margin:10px 0;
+    border-radius:5px;
+    border:1px solid #ccc;
+}
+
+button{
+    background:#1e88e5;
+    color:white;
+    padding:12px;
+    border:none;
+    width:100%;
+    border-radius:5px;
+    cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<h2>Upload Property</h2>
+
+<form id="propertyForm">
+
+<input id="title" placeholder="Property Title" required>
+
+<select id="type">
+<option>House</option>
+<option>Apartment</option>
+<option>Bed-sitter</option>
+</select>
+
+<input id="location" placeholder="Location" required>
+<input id="price" placeholder="Price" required>
+<textarea id="description" placeholder="Description"></textarea>
+
+<input type="file" id="image" accept="image/*" required>
+
+<input id="whatsapp" placeholder="WhatsApp Number" required>
+
+<button type="submit">Upload Property</button>
+
+</form>
+</div>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-storage.js";
+
+// ✅ FIXED CONFIG
+const firebaseConfig = {
+  apiKey: "YOUR_API_KEY",
+  authDomain: "zamrent-4b4de.firebaseapp.com",
+  projectId: "zamrent-4b4de",
+  storageBucket: "zamrent-4b4de.appspot.com", // ✅ corrected
+  messagingSenderId: "1027188717383",
+  appId: "1:1027188717383:web:0c247922d40ca7a35dbe62"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+const storage = getStorage(app);
+
+// ✅ FORM SUBMIT HANDLER
+document.getElementById("propertyForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const title = document.getElementById("title").value;
+  const type = document.getElementById("type").value;
+  const location = document.getElementById("location").value;
+  const price = document.getElementById("price").value;
+  const description = document.getElementById("description").value;
+  const whatsapp = document.getElementById("whatsapp").value;
+  const imageFile = document.getElementById("image").files[0];
+
+  if (!imageFile) {
+    alert("Please select an image");
+    return;
+  }
+
+  try {
+    // 🔥 Upload image
+    const storageRef = ref(storage, "properties/" + Date.now() + "_" + imageFile.name);
+    await uploadBytes(storageRef, imageFile);
+
+    // 🔗 Get image URL
+    const imageURL = await getDownloadURL(storageRef);
+
+    // 💾 Save to Firestore
+    await addDoc(collection(db, "houses"), {
+      title,
+      type,
+      location,
+      price,
+      description,
+      whatsapp,
+      imageURL,
+      createdAt: new Date()
+    });
+
+    alert("Property uploaded successfully!");
+    document.getElementById("propertyForm").reset();
+
+  } catch (error) {
+    console.error(error);
+    alert("Error: " + error.message);
+  }
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZamRent - Houses</title>
+<link rel="stylesheet" href="../SIGN_UP/new.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+/* HEADER */
+header{
+     background-image: url(../images/aerial-drone-image-luxury-florida-260nw-1199655202.jpg);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 20px;
+   /* background:white;*/
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:1000;
+    box-shadow:0 2px 5px rgba(0,0,0,0.1);
+    border-bottom: 2px solid white;
+}
+
+.logo{
+    font-size:22px;
+    font-weight:bold;
+    color:#1e88e5;
+}
+
+/* NAV */
+nav{
+    display:flex;
+}
+
+nav a{
+    margin:0 10px;
+    text-decoration:none;
+    color: yellow;
+    font-size: 20px;
+    font-weight:500;
+}
+nav a:hover{
+    color: blue;
+    text-decoration: underline;
+}
+
+.post-btn{
+    background:#f4b400;
+    padding:10px 15px;
+    border-radius:20px;
+    right: 0;
+    color:white;
+}
+.post-btn:hover{
+    color: yellow;
+    text-decoration: none;
+}
+.post{
+    float: right;
+}
+
+/* MOBILE MENU */
+.menu-toggle{
+    display:none;
+    font-size:26px;
+    cursor:pointer;
+}
+
+.menu-toggle:hover{
+    background-color: #25D366;
+}
+/* HERO */
+.hero{
+    margin-top:80px;
+    height:300px;
+    background:url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c") no-repeat center/cover;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    text-align:center;
+}
+
+.hero h1{
+    font-size:32px;
+}
+
+/* GRID */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
+    gap:20px;
+    padding:30px;
+}
+
+/* CARD */
+.card{
+    background:white;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+.card img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:15px;
+}
+
+.price{
+    color:#1e88e5;
+    font-weight:bold;
+}
+
+.btn{
+    display:block;
+    margin-top:10px;
+    padding:10px;
+    border-radius:5px;
+    text-align:center;
+    text-decoration:none;
+    color:white;
+    background:#1e88e5;
+}
+
+.whatsapp{
+    background:#25D366;
+}
+
+/* FOOTER */
+footer{
+    background:#0d1b2a;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+
+    .menu-toggle{
+        display:block;
+    }
+
+    nav{
+        display:none;
+        flex-direction:column;
+        position:absolute;
+        top:107px;
+        left:0;
+        width:100%;
+        background:rgba(42, 39, 39, 0.599);
+        box-shadow:0 2px 10px rgba(0,0,0,0.1);
+
+    }
+
+    nav.active{
+        display:flex;
+    }
+
+    nav a{
+        padding:15px;
+        border-bottom:1px solid #eee;
+    }
+
+    .hero{
+        height:auto;
+        padding:40px 20px;
+    }
+
+    .hero h1{
+        font-size:24px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    
+    <div class="logo">
+        <img src="../images/goldlogo.png" alt="logo">
+        <h2>ZAMRENT</h2>
+    </div>
+
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+    <nav id="nav">
+        <a href="../ZAMRENT.html"><b>HOME</b></a>
+        <a href="house.html"><b>HOUSES</b></a>
+        <a href="../about us/about.html"><b>ABOUT</b></a>
+        <a href="../CONTACTS/contact.html"><b>CONTACT</b></a>
+        <a href="../ACCOUNTS/account.html"><b>ACCOUNT</b></a>
+       <a href="upload.html" class="post-btn">Post House</a> 
+        
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>Find Your Next Home in Zambia</h1>
+</section>
+<!--
+
+<section class="grid">
+
+    <!-- HOUSE 1 --
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994">
+        <div class="card-content">
+            <div class="price">K6,500/month</div>
+            <p>3 Bedroom House - Chudleigh</p>
+
+            <a href="#" class="btn">View Details</a>
+
+            <a href="https://wa.me/260770394534?text=Hello%20I%20am%20interested%20in%20your%20house"
+               class="btn whatsapp">
+               Chat on WhatsApp
+            </a>
+        </div>
+    </div>
+
+    <!-- HOUSE 2 --
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be">
+        <div class="card-content">
+            <div class="price">K5,200/month</div>
+            <p>2 Bedroom House - Woodlands</p>
+
+            <a href="#" class="btn">View Details</a>
+
+            <a href="https://wa.me/260978000000?text=Hello%20I%20am%20interested%20in%20your%20house"
+               class="btn whatsapp">
+               Chat on WhatsApp
+            </a>
+        </div>
+    </div>
+
+</section>
+-->
+<section class="grid" id="housesContainer">
+  <!-- Houses will load here -->
+</section>
+
+<footer>
+    <p>© 2026 ZamRent. All rights reserved. <br> Designed and maintained by Engineer CUTHBERT SIMZ</p>
+</footer>
+
+<script>
+function toggleMenu(){
+    document.getElementById("nav").classList.toggle("active");
+}
+</script>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+const firebaseConfig = {
+     apiKey: "AIzaSyB_GeKHvHWF4OnCjl4n1RlIAJfIqH69rHo",
+  authDomain: "zamrent-4b4de.firebaseapp.com",
+  projectId: "zamrent-4b4de",
+  storageBucket: "zamrent-4b4de.firebasestorage.app",
+  messagingSenderId: "1027188717383",
+  appId: "1:1027188717383:web:0c247922d40ca7a35dbe62"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+const container = document.getElementById("housesContainer");
+
+async function loadHouses() {
+  const querySnapshot = await getDocs(collection(db, "houses"));
+
+  container.innerHTML = ""; // clear old content
+
+  querySnapshot.forEach((doc) => {
+    const house = doc.data();
+
+    const houseCard = document.createElement("div");
+    houseCard.classList.add("card");
+
+    houseCard.innerHTML = `
+      <img src="${house.imageURL}">
+      <div class="card-content">
+        <div class="price">K${house.price}/month</div>
+        <p>${house.title} - ${house.location}</p>
+
+        <a href="#" class="btn">View Details</a>
+
+        <a href="https://wa.me/${house.whatsapp || '260000000000'}?text=Hello I am interested in your house"
+           class="btn whatsapp">
+           Chat on WhatsApp
+        </a>
+      </div>
+    `;
+
+    container.appendChild(houseCard);
+  });
+}
+
+loadHouses();
+</script>
+
+</body>
+</html>

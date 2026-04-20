@@ -1,0 +1,320 @@
+/* HERO SECTION */
+.hero {
+    height: 450px;
+    background: url("../IMAGES/hero.jpg") no-repeat center/cover;
+    position: relative;
+    margin-top: 120px;
+    font-size: 50px;
+}
+@media (max-width: 1700px){
+    .hero h1{
+        font-size: 4rem;
+    }
+    .hero p{
+        font-size: 2rem;
+    }
+    .hero buttom {
+        padding: 10px 20px;
+        font-size: 2rem;
+    }
+}
+@media (max-width: 1300px){
+    .hero h1{
+        font-size: 2rem;
+    }
+    .hero p{
+        font-size: 2rem;
+    }
+    .hero buttom {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+}
+html{
+    font-size: 20px;
+}
+.heading{
+    font-size: 2rem;
+}
+.hero-text {
+    position: absolute;
+    top: 40%;
+    left: 10%;
+    color: white;
+}
+.btn-hero {
+    height: 20px;
+    background: red;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+.head{
+    margin-top: -120px
+
+}
+
+/* SERVICES */
+.services {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    margin-top: 200px;
+    padding: 50px 0;
+    background-color: rgba(54, 8, 8, 0.411);
+}
+.service-box img {
+    width: 50px;
+}
+.service-box {
+    width: 22%;
+}
+
+/* HOUSES GRID */
+.top-houses {
+   /** background-color: rgba( 255, 255,255, 0.5)**/
+    text-align: center;
+    padding: 50px 0;
+    
+}
+.image1{
+    height: 20PX;
+}
+.image2{
+    margin-top: 10px;
+    height: 100px;
+    width: 50px;
+}
+.image3{
+
+}
+.image4{
+    margin-top: 10px;
+    height: 100px;
+    width: 50px;
+}
+.house-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 0 40px;
+   
+}
+.house-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+    border-radius: 5px;
+    cursor: pointer;
+    align-items: center;
+   margin-right: 20px;
+}
+
+.search{
+   /* right: 0;*/
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -30px;
+   
+}
+.search-bar{
+     border: gold solid 2px;
+}
+button{
+    border-radius: 0 10px 0 10px;
+    margin-left: -10px;
+    background: linear-gradient(
+        45deg, red, orange, yellow, rgb(114, 226, 114), rgb(122, 122, 212),rgb(204, 114, 204),gold);
+        background-size: 300%;
+        animation: moveGradient 6s ease infinite;
+        transition: 0.3s;
+        border-top: gold solid 2px;
+        border-right: gold solid 2px;
+        border-bottom: gold solid 2px;
+        border-left: none;
+   /**background-color: blue;**/
+}
+.house-card {
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+   
+}
+
+/* TESTIMONIALS */
+.testimonials {
+
+    background-color: rgba(128, 128, 128, 0.514);
+    text-align: center;
+    padding: 50px 0;
+}
+.test-grid {
+    display: flex;
+    justify-content: space-around;
+}
+.test-box {
+    width: 28%;
+}
+.test-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+.see-more{
+    color: black;
+    font-size: 30px;
+    }
+a .see{
+    text-decoration: none;
+}
+h4 .simz{
+    color: white;
+    text-decoration: none;
+}
+/**
+.dropdown-menu{
+    background-color: rgba(0, 0, 0, 0.507);
+    width: 200px;
+    height: 140px;
+    
+}
+#dropdown :hover > .dropdown-menu  {
+    display: block;
+}
+.dropdown-menu a{
+    color: white;
+    width: 20px;
+    text-decoration: none;
+text-align: center;
+display: none;
+}
+.dropdown-menu :hover{
+    background-color: gold;
+    color: red;
+    
+}
+    **/
+.dropdown-menu{
+        background-color: rgba(0, 0, 0, 0.553);
+        float: left;
+
+    }
+    .dropdown-menu li:hover{
+        background-color: gold;
+    }
+    .dropdown-menu a{
+            text-decoration: none;
+        color: aliceblue;
+    }
+    .dropdown-menu {
+        
+        max-height: 100px;
+        overflow-y: auto;
+        border: 1 px solid #ccc;
+        padding: 10px;
+    }
+    
+
+    .title{
+        color: gold;
+        background-color: rgba(128, 128, 128, 0.491);
+        border-bottom: 2px solid white;
+        margin-top: 0;
+        margin-bottom: 0;
+        z-index: 1000;
+    }
+.views{
+        margin-top: -20px;
+        padding-bottom: 50px;
+        text-align: center;
+}
+
+/* FOOTER */
+.footer {
+    background: #4cd396;
+    color: white;
+    padding: 40px;
+    display: flex;
+    height: auto;
+   /** margin: auto;**/
+    justify-content: space-between;
+   
+}
+.footer-col {
+    width: 30%;
+    
+}
+.footer-col li{
+    list-style: none;
+    margin-left: -270px;
+}
+.footer-col input,
+.footer-col textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 8px;
+}
+.footer-btn {
+    background: red;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+}
+.salute{
+    align-items: center;
+   /** border-top: white solid 2px;**/
+    background-color: #41b883;
+    margin-top: -20px;
+    padding-top: 10px;
+     
+}
+.house-info{
+    list-style: none;
+    display: flex;
+    border-top: 2px white solid;
+    background-color: blue;
+
+}
+ul li{
+    padding: 5px;
+    
+}
+li img{
+   height: 20px;
+   width: 20px; 
+    object-fit: cover;
+    border-radius: 50%;
+}
+.material-icons{
+    font-size: 24px;
+    color: #333;
+}
+
+/**.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 40
+}
+  
+  
+.material-icons, .material-symbols-outlined {
+    font-size: 20px;
+}**/
+
+@media (max-width: 600px) {
+        .h-services{
+            display: none;
+        }
+        .footer-col{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            text-align: center;
+        }
+    
+}
+
