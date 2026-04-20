@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZAMRENT - Contact</title>
+  <link rel="stylesheet" href="contact.css">
+
+  <!-- Font Awesome for icons -->
+  <script src="https://kit.fontawesome.com/yourkitcode.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="header">
+
+  <!-- LOGO LEFT -->
+  <div class="logo">
+    <img src="../images/goldlogo.png" alt="logo">
+    <h2>ZAMRENT</h2>
+  </div>
+
+  <!-- NAV CENTER -->
+  <nav class="nav">
+    <strong>
+        <a href="../ZAMRENT.html">HOME</a>
+        <a href="../HOUSES/house.html">HOUSES</a>
+        <a href="../about us/about.html">ABOUT</a>
+        <a href="../CONTACTS/contact.html">CONTACT</a>
+        <a href="login.html">LOGIN</a>
+    </strong>
+  </nav>
+  <div class="menu-toggle" id="menu-toggle">☰</div>
+</header>
+<!-- SIDEBAR -->
+<div class="sidebar" id="sidebar">
+  <div class="close-btn" id="close-btn">✖</div>
+  <a href="../ZAMRENT.html">HOME</a>
+  <a href="../HOUSES/houses.html">HOUSES</a>
+  <a href="../about us/about.html">ABOUT</a>
+  <a href="../CONTACTS/contact.html">CONTACT</a>
+  <a href="../SIGN_UP/login.html">LOGIN</a>
+</div>
+
+<!-- CONTACT SECTION -->
+<section class="contact-container">
+
+  <!-- INFO -->
+  <div class="contact-info">
+    <h2>Get in Touch</h2>
+    <p>We are here to help you find your perfect home.</p>
+
+    <div class="info-box">
+      <h4>📍 Address</h4>
+      <p>Newtown,Nampundwe,Shibuyunji</p>
+    </div>
+
+    <div class="info-box">
+      <h4>📞 Phone</h4>
+      <p>+260 770 394 534</p>
+    </div>
+
+    <div class="info-box">
+      <h4>📧 Email</h4>
+      <p>cuthy.simz@gmail.com</p>
+    </div>
+
+    <!-- SOCIAL BUTTONS -->
+    <div class="socials">
+
+      <a href="https://wa.me/260XXXXXXXXX" class="whatsapp" target="_blank">
+        <i class="fab fa-whatsapp"></i> WhatsApp
+      </a>
+
+      <a href="https://facebook.com" class="facebook" target="_blank">
+        <i class="fab fa-facebook"></i> Facebook
+      </a>
+
+      <a href="https://instagram.com" class="instagram" target="_blank">
+        <i class="fab fa-instagram"></i> Instagram
+      </a>
+
+    </div>
+
+  </div>
+
+  <!-- FORM -->
+  <div class="contact-form">
+    <h2>Send Message</h2>
+
+    <form>
+      <input type="text" placeholder="Full Name" required>
+      <input type="email" placeholder="Email" required>
+      <input type="text" placeholder="Subject" required>
+      <textarea placeholder="Message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+
+</section>
+
+<!-- CHAT BOT -->
+<div class="chat-bubble" onclick="toggleChat()">💬</div>
+
+<div class="chat-box" id="chatBox">
+  <div class="chat-header">ZamRent Assistant</div>
+
+  <div class="chat-body" id="chatBody">
+    <p><b>Bot:</b> Hi 👋 How can I help you today?</p>
+  </div>
+
+  <input type="text" id="chatInput" placeholder="Type message...">
+</div>
+
+<script>
+function toggleChat() {
+  document.getElementById("chatBox").classList.toggle("active");
+}
+
+// simple fake bot reply
+document.getElementById("chatInput").addEventListener("keypress", function(e) {
+  if (e.key === "Enter") {
+    let msg = this.value;
+    let chatBody = document.getElementById("chatBody");
+
+    chatBody.innerHTML += "<p><b>You:</b> " + msg + "</p>";
+
+    setTimeout(() => {
+      chatBody.innerHTML += "<p><b>Bot:</b> Thanks for your message 👍 We will respond soon.</p>";
+    }, 800);
+
+    this.value = "";
+  }
+});
+const toggleBtn = document.getElementById("menu-toggle");
+const sidebar = document.getElementById("sidebar");
+const closeBtn = document.getElementById("close-btn");
+
+toggleBtn.addEventListener("click", () => {
+  sidebar.classList.add("active");
+});
+
+closeBtn.addEventListener("click", () => {
+  sidebar.classList.remove("active");
+});
+</script>
+
+</body>
+</html>
